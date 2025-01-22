@@ -14,9 +14,13 @@ def count_chars():
     with open("books/frankenstein.txt") as f:
         file_contents = f.read()
         num_chars = {}
+        file_contents = file_contents.lower()
         for char in file_contents:
-            num_chars[char]=num_chars.setdefault(char, 0)+1
-            print(num_chars)
+            if char in num_chars:
+                num_chars[char] = num_chars[char] + 1
+            else:
+                num_chars[char] = 1
+        print(num_chars)
 
 
 main()
