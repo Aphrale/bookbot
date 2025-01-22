@@ -22,6 +22,9 @@ def count_chars():
                 num_chars[char] = 1
         print(num_chars)
 
+def report(count_words, count_chars):
+    
+
 
 main()
 count_words()
