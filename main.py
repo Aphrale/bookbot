@@ -33,8 +33,6 @@ def report():
         num_chars = {}
         file_contents = "".join(file_contents.split())
         for char in file_contents:
-            if char == " ":
-                print("Found a space!")
             if char.isalpha() and char in num_chars:
                     num_chars[char] = num_chars[char] + 1
             elif char.isalpha():
