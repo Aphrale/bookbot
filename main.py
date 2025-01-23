@@ -25,14 +25,16 @@ def count_chars():
 def report():
       with open("books/frankenstein.txt") as f:
         file_contents = f.read()
+        file_contents = file_contents.lower()
         words = file_contents.split()
         word_count = len(words)
         print(f"--- Begin report of books/frankenstein.txt ---")
-        print(f"{word_count} words found in the document\n")
+        print(f"{word_count} words found in the document")
         num_chars = {}
-        file_contents = file_contents.lower()
         file_contents = "".join(file_contents.split())
         for char in file_contents:
+            if char == " ":
+                print("Found a space!")
             if char.isalpha() and char in num_chars:
                     num_chars[char] = num_chars[char] + 1
             elif char.isalpha():
@@ -46,11 +48,11 @@ def report():
 
         char_list.sort(reverse=True, key=sort_on)
         for char_dict in char_list:
-            print(f"The '{char_dict['char']}' character was found {char_dict['num']} times")
+            print("The '" + char_dict['char'] + "' character was found " + str(char_dict['num']) + " times")
         print("--- End report ---")
 
 
-main()
-count_words()
-count_chars()
+
+
+
 report()
