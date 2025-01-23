@@ -20,12 +20,9 @@ def count_chars():
                 num_chars[char] = num_chars[char] + 1
             else:
                 num_chars[char] = 1
-        print(num_chars)
-
-def report(count_words, count_chars):
-    
-
-
+        for key in num_chars:
+            print(f"The", key, "character was found", num_chars[key], "times")
+            
 main()
 count_words()
 count_chars()
